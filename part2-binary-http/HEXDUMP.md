@@ -1,4 +1,4 @@
-# Annotated hexdump — one complete request and response
+# Annotated hexdump - one complete request and response
 
 Captured from a real run, bytes unedited:
 
@@ -7,12 +7,12 @@ $ ./bserve ./www 9000 &
 $ ./bcurl -v localhost:9000/hello.txt
 ```
 
-One TCP connection carries four frames: REQUEST →, RESPONSE ←, DATA ←, then bcurl's GOAWAY →.
+One TCP connection carries four frames: REQUEST ->, RESPONSE<-, DATA <->, then bcurl's GOAWAY ->.
 Offsets are from the start of each frame. Section numbers (§) refer to [SPEC.md](SPEC.md).
 
 ---
 
-## 1. Client → server: REQUEST (54 octets = 8 header + 46 payload)
+## 1. Client -> server: REQUEST (54 octets = 8 header + 46 payload)
 
 ```
 00000000  00 00 2e 01 01 00 00 01  01 00 0a 2f 68 65 6c 6c  |.........../hell|
@@ -50,7 +50,7 @@ Length says the payload ends there.
 
 ---
 
-## 2. Server → client: RESPONSE (142 octets = 8 + 134)
+## 2. Server -> client: RESPONSE (142 octets = 8 + 134)
 
 ```
 00000000  00 00 86 02 00 00 00 01  00 c8 04 00 19 74 65 78  |.............tex|
@@ -96,7 +96,7 @@ Six header names, and not one name string sent: every name came from the static 
 
 ---
 
-## 3. Server → client: DATA (29 octets = 8 + 21)
+## 3. Server -> client: DATA (29 octets = 8 + 21)
 
 ```
 00000000  00 00 15 03 01 00 00 01  48 65 6c 6c 6f 2c 20 62  |........Hello, b|
@@ -119,7 +119,7 @@ next frame, and the connection is still open.
 
 ---
 
-## 4. Client → server: GOAWAY (12 octets = 8 + 4) — closing cleanly
+## 4. Client -> server: GOAWAY (12 octets = 8 + 4) — closing cleanly
 
 ```
 00000000  00 00 04 04 00 00 00 00  00 01 00 00              |............|

@@ -13,7 +13,9 @@ The only thing that crosses between them is [SPEC.md](SPEC.md).
 
 Python 3.8+, standard library only. The `bserve` / `bcurl` wrappers run the `.py` files, so the
 slide's commands work as written in Git Bash, Linux and macOS. In PowerShell or cmd use
-`.\bserve.cmd` / `.\bcurl.cmd`, or `python bserve.py …`.
+`.\bserve.cmd` / `.\bcurl.cmd`, or `python bserve.py …`. On macOS/Linux, if `python` is missing,
+use `python3` in the commands below (the wrappers already do), and run `chmod +x bserve bcurl`
+once if `./bserve` says "permission denied".
 
 ```sh
 ./bserve ./www 9000                          # Track 1

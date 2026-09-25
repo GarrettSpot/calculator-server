@@ -9,6 +9,9 @@ python check.py localhost 8080   # the marking script from the slide, plus the s
 python -m unittest discover -s tests
 ```
 
+On macOS and Linux the interpreter is usually `python3`: `python3 server.py 8080 &`, then
+`python3 check.py localhost 8080`, and stop the server with `kill %1`.
+
 ## Behaviour
 
 | Request | Status | Body |
