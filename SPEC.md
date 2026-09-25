@@ -1,4 +1,4 @@
-# BHTTP/1 — HTTP semantics in binary frames
+# BHTTP/1 - HTTP semantics in binary frames
 
 *Status: version 1. Everything a stranger needs to write an interoperable client or server.*
 The keywords MUST, MUST NOT, SHOULD and MAY are used as in RFC 2119.
@@ -13,7 +13,7 @@ request N+1 before response N arrives. There is no preface or handshake. The fir
 client sends is the first octet of a frame. Everything on the wire, in both directions, is a
 sequence of frames.
 
-## 2. Frame header — fixed 8 octets
+## 2. Frame header - fixed 8 octets
 
 ```
  0                   1                   2                   3
