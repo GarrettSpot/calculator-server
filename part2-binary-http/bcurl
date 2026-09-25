@@ -1,0 +1,5 @@
+#!/bin/sh
+# ./bcurl ... : run bcurl.py with whichever Python 3 is on PATH.
+PY=$(command -v python3 2>/dev/null || command -v python)
+case "$(uname -s 2>/dev/null)" in MINGW*|MSYS*|CYGWIN*) PY=$(command -v python || command -v python3) ;; esac
+exec "$PY" "$(dirname "$0")/bcurl.py" "$@"
